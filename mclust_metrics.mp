@@ -1,0 +1,20 @@
+{
+	"processors":[
+		{
+			"name":"kepecs.mclust_metrics",
+			"version":"0.1",
+			"description":"",
+			"inputs":[
+				{"name":"timeseries"},
+				{"name":"firings"}
+			],
+			"outputs":[
+				{"name":"cluster_metrics_out"}
+			],
+			"parameters":[
+				{"name":"clip_size","optional":false}
+			],
+			"exe_command":"$(basepath)/run_matlab.sh $(basepath)/mclust_metrics \"mclust_metrics('$timeseries$','$firings$','$cluster_metrics_out$',$clip_size$);\""
+		}
+	]
+}
